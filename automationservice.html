@@ -1,0 +1,350 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Data Automation - LikhilAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* All styles are copied directly from your index.html for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0066ff;
+            --secondary-color: #00d4ff;
+            --dark-bg: #0a0a0a;
+            --light-bg: #ffffff;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #0066ff 0%, #00d4ff 100% );
+            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--dark-bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(0, 102, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-tagline {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1;
+            font-weight: 400;
+            margin-top: 0.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+        
+        /* Added style for service page content */
+        .service-page-content {
+            padding-top: 120px; /* Pushes content below the fixed header */
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            background: var(--gradient-dark);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-content-wrapper h3 {
+            color: var(--secondary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-content-wrapper ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-content-wrapper li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-content-wrapper li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            margin-top: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.4);
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            padding: 4rem 0 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg">
+        <div class="floating-particles"></div>
+    </div>
+
+    <!-- Reusable Header -->
+    <header>
+        <nav class="container">
+            <div class="logo-container">
+                <a href="index.html"><img src="likhilai_teardrop_logo.png" alt="LikhilAI Logo" class="logo-image"></a>
+                <div class="brand-text">
+                    <h1 class="brand-name">LikhilAI</h1>
+                    <p class="brand-tagline">Voicing Data Through AI</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <!-- Links now point back to index.html sections -->
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#founder">Founder</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content for this Service Page -->
+    <main class="service-page-content">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Smart Data Automation</h2>
+                <div class="service-content-wrapper">
+                    <p><strong>Are you a CFO, analyst, or founder buried in spreadsheets every day?</strong></p>
+                    <p>You copy-paste numbers across tabs, manually compile reports, and spend hours every week trying to make sense of fragmented data. This isn't why you started your business — let automation take over the grunt work.</p>
+                    <p>With Smart Data Automation, we transform your Google Sheets, Excel files, and CSVs into intelligent, self-updating dashboards. Your workflows run in the background while you focus on strategy and growth.</p>
+
+                    <h3>💡 What You Get</h3>
+                    <ul>
+                        <li>Spreadsheet → Dashboard automation</li>
+                        <li>Real-time syncing of form entries, CRM data, or vendor inputs</li>
+                        <li>Custom metrics, anomaly alerts, and visual insights</li>
+                    </ul>
+
+                    <h3>📈 Why It Matters</h3>
+                    <ul>
+                        <li>Save 10+ hours/week on reporting</li>
+                        <li>Data stays fresh and accurate — no manual effort</li>
+                        <li>Cut errors from manual consolidation</li>
+                        <li>Focus on decisions, not data cleaning</li>
+                    </ul>
+
+                    <p>Ready to stop wasting time on spreadsheets?</p>
+                    <a href="index.html#contact" class="cta-primary">Let’s Automate Your Data</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Reusable Footer -->
+    <footer class="section">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Let's explore how automation can save your time.</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Email: <a href="mailto:akash@likhilai.com" style="color: white; text-decoration: underline;">akash@likhilai.com</a></p>
+                <a href="index.html#contact" class="cta-primary">Contact Us</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; LikhilAI 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Particle and animation scripts from index.html
+        function createParticles() {
+            const container = document.querySelector('.floating-particles');
+            if (!container) return;
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 6}s`;
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+    </script>
+</body>
+</html>
+
