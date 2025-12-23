@@ -536,9 +536,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
+            
 
             .projects-grid {
                 grid-template-columns: 1fr;
@@ -586,7 +584,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                
                 <li><a href="#founder">Founder</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -655,44 +653,8 @@
 
 
 
-    <section class="section portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title fade-in-up">Our Portfolio</h2>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-card fade-in-up">
-                    <div class="portfolio-card-header">
-                        <h3>Business Dashboard with Predictive Analytics</h3>
-                    </div>
-                    <div class="portfolio-card-body">
-                        <p>Real-time dashboard displaying employee and vendor data with AI-driven cost-saving recommendations using advanced algorithms.</p>
-                    <a href="businessdash.html" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                </div>
-                
-            </div>
-
-                <div class="portfolio-card fade-in-up">
-                    <div class="portfolio-card-header">
-                        <h3>Smart Inventory Management System for SMEs</h3>
-                    </div>
-                    <div class="portfolio-card-body">
-                        <p>Google Sheets-powered inventory system with LSTM-based sales forecasting, stock monitoring, and automated vendor notifications.</p>
-                    <a href="inventory.html" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="portfolio-card fade-in-up">
-                    <div class="portfolio-card-header">
-                        <h3>AI-Powered LMS for Solo Tutors</h3>
-                    </div>
-                    <div class="portfolio-card-body">
-                        <p>Complete learning management system for tutors built with n8n, OpenAI API, and Google Sheets integration.</p>
-                    <a href="lms-tutor.html" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                
-            </div>
+    
+                   
         </div>
         <div style="text-align: center; margin-top: 3rem;">
         <div style="text-align: center; margin-top: 3rem;">
@@ -846,16 +808,7 @@
             });
         });
 
-        // Portfolio card interactions
-        document.querySelectorAll('.portfolio-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
+        
 
         // Initialize particles
         createParticles();
