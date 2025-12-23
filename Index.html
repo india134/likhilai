@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LikhilAI - AI Automation for Startups & MSMEs</title>
+    <meta name="description" content="LikhilAI builds AI tools for finance and accounting teams, CAs, and C-suite leaders. Automate reports, analyze financials, manage tasks, and save hours — with tailored AI automation.">
+    <meta name="keywords" content="AI for finance, AI for accounting, AI for CAs, CFO automation, AI for startups, AI executive productivity, AI reporting, AI dashboards, AI workflow automation">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #0066ff;
+            --secondary-color: #00d4ff;
+            --dark-bg: #0a0a0a;
+            --light-bg: #ffffff;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--dark-bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 102, 255, 0.2);
+            padding: 0.5rem 0;
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo-container { display: flex; align-items: center; gap: 1rem; }
+
+        .logo-image { height: 70px; transition: 0.3s; }
+        .logo-image:hover { transform: scale(1.05); opacity: 0.9; }
+
+        .brand-name { font-size: 2.4rem; font-weight: 700; color: var(--text-primary); }
+        .brand-tagline { font-size: 0.85rem; color: var(--text-secondary); }
+
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+        .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 1.2rem; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: url('images/hero_image_new.png') center/cover fixed;
+            position: relative; padding-top: 100px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background: rgba(10,10,10,0.6);
+        }
+
+        .hero-content { position: relative; z-index: 2; text-align: center; color: var(--text-primary); }
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.6rem; max-width: 800px;
+            margin: 1.5rem auto 3rem; color: var(--text-secondary);
+        }
+
+        .cta-primary {
+            background: var(--gradient-primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* SECTIONS */
+        .section { padding: 8rem 0; }
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ABOUT */
+        .about { background: var(--light-bg); color: var(--text-dark); }
+        .about-content { max-width: 900px; margin: auto; text-align: center; font-size: 1.3rem; }
+
+        /* SERVICES */
+        .services { background: var(--dark-bg); color: var(--text-primary); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+            gap: 3rem;
+        }
+        .service-card {
+            background: var(--gradient-dark);
+            padding: 3rem; border-radius: 20px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .service-icon {
+            width: 100px; height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%; margin: auto; display: flex;
+            justify-content: center; align-items: center;
+            font-size: 2.5rem; color: white;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap: 2rem;
+        }
+
+        .project-item {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem; border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* FOUNDER */
+        .founder { background: var(--light-bg); }
+        .founder-content {
+            display: grid; grid-template-columns: 1fr 2fr;
+            gap: 4rem; align-items: center;
+            max-width: 1000px; margin: auto;
+        }
+        .founder-image {
+            max-width: 300px; height: 300px; border-radius: 50%;
+            border: 5px solid var(--primary-color); object-fit: cover;
+        }
+
+        /* CONTACT */
+        .contact { color: white; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 4rem 0; background: var(--dark-bg); }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="container">
+        <div class="logo-container">
+            <img src="likhilai_teardrop_logo.png" class="logo-image">
+            <div class="brand-text">
+                <h1 class="brand-name">LikhilAI</h1>
+                <p class="brand-tagline">AI for Finance and Productivity</p>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1>AI Solutions That Think Like Finance & Strategy Teams</h1>
+            <p class="hero-subtitle">
+                We help finance and accounting teams, CAs, and C-suite executives eliminate manual work, automate reporting, financial compliance and make smarter decisions — with AI tools built for real business needs.
+            </p>
+            <a href="#contact" class="cta-primary">Start Your Automation Journey</a>
+        </div>
+    </div>
+</section>
+
+<section class="section about" id="about">
+    <div class="container">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="about-content">
+            <p>
+                LikhilAI builds practical, business-ready AI systems that eliminate the repetitive work finance teams handle every day. We help Chartered Accountants, finance professionals, and leadership teams save hours otherwise spent on spreadsheets, reconciliations, compliance tracking, and follow-ups.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section services" id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="services-grid">
+
+            <a href="AIforfinance.html" style="text-decoration:none;color:inherit;">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>AI for Finance & Accounting Teams</h3>
+                    <p>Auto-reconcile payments, generate MIS reports, send follow-ups, analyze statements, and stay audit-ready.</p>
+                </div>
+            </a>
+
+            <a href="AIforcsuite.html" style="text-decoration:none;color:inherit;">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>AI for C-Suite Productivity</h3>
+                    <p>Automated reporting, email triage, meeting summaries, team nudges — everything founders & CFOs need.</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section projects" id="projects">
+    <div class="container">
+        <h2 class="section-title">What Can You Build with AI?</h2>
+
+        <div class="projects-grid">
+            <div class="project-item"><h4>Cash Flow Dashboard</h4><p>Real-time visibility into finances with automated MIS.</p></div>
+            <div class="project-item"><h4>Document Parser</h4><p>Extract data from invoices, receipts, statements.</p></div>
+            <div class="project-item"><h4>GST Filing Prep Bot</h4><p>Compile data, flag mismatches, prepare return sheets.</p></div>
+            <div class="project-item"><h4>Investor Report Generator</h4><p>AI-generated charts, summaries & insights.</p></div>
+            <div class="project-item"><h4>Executive Assistant Bot</h4><p>Daily digests, nudges, email summaries.</p></div>
+            <div class="project-item"><h4>Meeting Minute Generator</h4><p>Auto-capture decisions & action items.</p></div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section founder" id="founder">
+    <div class="container">
+        <h2 class="section-title">Meet the Founder</h2>
+
+        <div class="founder-content">
+            <img src="Akash_Professional.jpg" class="founder-image">
+            <div class="founder-text">
+                <h2>Akash Gupta</h2>
+                <p>
+                    Akash is an AI engineer — a graduate of IIT BHU and currently pursuing his Master's in AI at IIT Kharagpur. He focuses on building automation tools that simplify finance and business workflows.
+                </p>
+                <p>
+                    His mission is to combine deep AI capability with everyday business needs to eliminate repetitive work and unlock productivity.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section contact" id="contact">
+    <div class="container" style="max-width:600px;text-align:center;color:white;">
+        <h2 class="section-title">Get in Touch</h2>
+        <form action="https://formspree.io/f/xyzpjanj" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:8px;border:none;">
+            <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:8px;border:none;">
+            <textarea name="message" placeholder="Your Message" required rows="5" style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:8px;border:none;"></textarea>
+            <button type="submit" style="background:var(--gradient-primary);color:white;padding:1rem 2rem;border:none;border-radius:50px;font-weight:bold;">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <h3 style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Ready to Automate Your Startup?</h3>
+    <p style="color:var(--text-secondary);margin-bottom:1rem;">Book a free consultation: <a href="mailto:akash@likhilai.com" style="color:white;text-decoration:underline;">akash@likhilai.com</a></p>
+    <a href="#contact" class="footer-cta" style="border:2px solid var(--primary-color);padding:1rem 2rem;border-radius:50px;color:white;text-decoration:none;">Book a Free Consultation</a>
+    <div style="margin-top:2rem;color:var(--text-secondary);">&copy; LikhilAI 2025</div>
+</footer>
+
+</body>
+</html>
