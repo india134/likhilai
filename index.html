@@ -131,6 +131,36 @@
             justify-content: center; align-items: center;
             font-size: 2.5rem; color: white;
         }
+        .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    color: #d0d0d0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.service-features li::before {
+    content: "• ";
+    color: #00c6ff;
+    font-weight: bold;
+}
+
+.view-more {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #00c6ff;
+    font-size: 0.95rem;
+}
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 25px rgba(0, 198, 255, 0.15);
+}
+
 
         /* PROJECTS */
         .projects-grid {
@@ -224,10 +254,14 @@
                         <i class="fas fa-file-invoice-dollar"></i>
                     </div>
                     <h3>Bookkeeping & Accounting Automation</h3>
-                    <p>
-                        Automate bank statement parsing, invoice OCR, ledger posting, reconciliation,
-                        and monthly bookkeeping workflows — with speed, accuracy, and zero manual effort.
-                    </p>
+
+                    <ul class="service-features">
+                        <li>Bank statement → Ledger automation</li>
+                        <li>OCR for invoices & receipts</li>
+                        <li>Automatic reconciliation</li>
+                    </ul>
+
+                    <div class="view-more">View More →</div>
                 </div>
             </a>
 
@@ -238,10 +272,14 @@
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <h3>Compliance & Filing Automation</h3>
-                    <p>
-                        GST/ITR/TDS preparation bots, mismatch detection, document compilation,
-                        and automated compliance tracking — so your team never misses a deadline.
-                    </p>
+
+                    <ul class="service-features">
+                        <li>GST/ITR/TDS prep bots</li>
+                        <li>Mismatch detection</li>
+                        <li>Compliance tracking</li>
+                    </ul>
+
+                    <div class="view-more">View More →</div>
                 </div>
             </a>
 
@@ -252,16 +290,21 @@
                         <i class="fas fa-chart-pie"></i>
                     </div>
                     <h3>Reporting & Insights Automation</h3>
-                    <p>
-                        Auto-generate MIS reports, cash flow dashboards, KPI summaries, investor-ready reports,
-                        and weekly financial digests — instantly, with AI.
-                    </p>
+
+                    <ul class="service-features">
+                        <li>Auto MIS reports</li>
+                        <li>Cash flow dashboards</li>
+                        <li>Weekly AI summaries</li>
+                    </ul>
+
+                    <div class="view-more">View More →</div>
                 </div>
             </a>
 
         </div>
     </div>
 </section>
+
 
 
 <section class="section projects" id="projects">
